@@ -4,7 +4,7 @@ var app = new Vue({
     quiz: quiz, // Références aux questions du quiz
     current: 0, // Numéro de la question en cours
     success: null, // null si pas de réponse, true si succès, false si erreur
-    score: 0 // Incrémentation du score final
+    score: 10 // Incrémentation du score final
   },
   computed: {
     step: function step () {
@@ -17,19 +17,35 @@ var app = new Vue({
       // Modifie la propriété succès en fonction de la réponse (QCM)
       var correction = this.step.choices[this.step.answer];
 
-      // ******* Ecris ici la condition nécessaire
+      if (answer === correction) {
+        this.success = true
+        this.score++
+      } else {
+        this.success = false
+      }
+
+
     },
     submitText: function submitText () {
       // Modifie la propriété succès en fonction de la réponse (réponse libre)
       var answer = this.$refs.textInput.value;
       var correction = this.step.answer;
 
-      // ******* Ecris ici la condition nécessaire
+      if (answer === correction) {
+        this.success = true
+        this.score++
+      } else {
+        this.success = false
+      }
+
     },
     nextQuestion: function nextQuestion () {
       // Incrémente le score, réinitialise la propriété succès, passe à la question suivante
 
-      // ******* Ecris ici les actions et la condition nécessaires
+     this.success = null
+     this.current++
+
+
     },
     buttonClasses: function buttonClasses (value) {
       // Renvoie les classes pour colorer les bouttons QCM en fonction de la réponse

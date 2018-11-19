@@ -18,18 +18,22 @@
         width: 45rem;
       }
     </style>
+
+  <script> function 
+
+</script>
+
+
   </head>
   
 
   <body>
     <div id="app" class="container">
 
-      <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">QUIZZ SUR L'OEUVRE DE J.K ROWLING</span>
+      <nav class="navbar navbar-dark bg-primary">
+        <span class="navbar-brand mb-2 h1">TESTEZ VOS CONNAISSANCES SUR L'UNIVERS D'HARRY POTTER</span>
       </nav>
 
-      <h3>Testez vos connaissances sur l'univers d'Harry Potter
-      </h3>
 
       <main class="d-flex align-items-center justify-content-md-center" v-cloak> 
         <div class="card">
@@ -39,7 +43,7 @@
 
             <button v-if="step.choices" v-for="choice in step.choices" class="btn btn-lg btn-block" :class="buttonClasses(choice)" v-on:click="submitButton(choice)" :disabled="success === false">{{ choice }}</button>
 
-            <input type="text" ref="textInput" v-if="!step.choices" class="form-control" :class="{'is-valid': success === true, 'is-invalid': success === false}" placeholder="Écrivez votre réponse" v-on:keyup.enter="submitText()" :disabled="success === false">
+           
 
             <p class="lead mt-2" v-if="success === true">Bien vu !</p>
           <p class="lead mt-2" v-if="success === false">Raté ! <span v-if="!step.choices">La réponse était {{ step.answer }}</span></p>
@@ -51,13 +55,12 @@
           <p class="card-text">Affiche le score ici !</p>
         </div>
       </div>
-    </main>
-
-
-      
+    </main> 
     </div>
-
     <script src="vendors/vue.min.js"></script>
-    <script src="index.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./quiz.js"></script>
+    <script src="./app.js"></script>
   </body>
+
 </html>
