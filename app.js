@@ -30,7 +30,7 @@ function check(){
     if (question6 === "Un terrier") {
         correct++;
   }
-    if (question7 === "Regardez...moi") {
+    if (question7 === "'Regardez...moi'") {
         correct++;
   }
     if (question8 === "L'épée de Godric Gryffondor") {
@@ -43,28 +43,33 @@ function check(){
         correct++; 
   }
 
-var messages = ["Vous êtes un parfait connaisseur de l'univers de J.K Rowling!", "Pas mal, vous y êtes presque", "Va falloir revisionner toute la série Harry Potter dispo sur Netflix!"];
+var messages = ["Bravo ! Tu es un parfait connaisseur de l'univers de J.K Rowling!", "Pas mal, tu y es presque...", "Va falloir revisionner toute la série Harry Potter dispo sur Netflix!"];
+var pictures = ["img/success_gif.gif", "img/giphy_bof_success.gif", "img/fail_gif.gif"];
+
 
 var range; 
 
-  if (correct < 1) {
+  if (correct < 4) {
       range = 2;
 
   }
 
-  if (correct > 0 && correct < 3) {
+  if (correct > 5 && correct < 7) {
       range = 1;
 
   }
 
-  if (correct > 2) {
+  if (correct > 8) {
       range = 0; 
   }
 
 document.getElementById("after_submit").style.visibility = "visible";
 
 
-document.getElementById("message").innerHTML = message[range];
-document.getElementById("number_correct").innerHTML = "You got " + correct + " correct."; 
-
+document.getElementById("message").innerHTML = messages[range];
+document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
+document.getElementById("picture").src = pictures[range]; 
 }
+
+
+
