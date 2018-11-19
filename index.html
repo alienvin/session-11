@@ -1,66 +1,84 @@
 <!DOCTYPE html>
 <html>
+<head>
   
-  <head>
-    <meta charset="utf-8">
-    <title>QUIZZ HARRY POTTER</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+<title>QUIZZ HARRY POTTER</title>
+<link href ="style.css" rel ="stylesheet">
+<link href ="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src ="app.js"></script>
 
-    <style type="text/css">
-      main {
-        height: calc(100vh - 56px);
-      }
-      main[v-cloak] {
-        display: none !important;
-      }
-      main.card {
-        width: 45rem;
-      }
-    </style>
+</head>
 
-  <script> function 
-
-</script>
-
-
-  </head>
+<body>
   
+<h1>Testez vos connaissances sur l'univers d'Harry Potter</h1>
 
-  <body>
-    <div id="app" class="container">
+<form id ="quiz" name ="quiz">
 
-      <nav class="navbar navbar-dark bg-primary">
-        <span class="navbar-brand mb-2 h1">TESTEZ VOS CONNAISSANCES SUR L'UNIVERS D'HARRY POTTER</span>
-      </nav>
+<p>1. Qui sont les quatre sorciers fondateurs de Poudlard?</p>
+  <input type="radio" id="mc" name="question1" value="Roselia Serdaigle, Gordius Gryffondor, Holga Poufsouffle, Salazar Serpentard"> Roselia Serdaigle, Gordius Gryffondor, Holga Poufsouffle, Salazar Serpentard<br>
+  <input type="radio" id="mc" name="question1" value="Rowena Serdaigle, Godric Gryffondor, Helga Poufsouffle, Salazar Serpentard"> Rowena Serdaigle, Godric Gryffondor, Helga Poufsouffle, Salazar Serpentard<br>
+  <input type="radio" id="mc" name="question1" value="Rowena Serdaigle, Gidric Gryffondor, Hilge Poufsouffle, Sandor Serpentard"> Rowena Serdaigle, Gidric Gryffondor, Hilge Poufsouffle, Sandor Serpentard<br>
+
+<p>2. En quelle année sont morts les parents d'Harry Potter ?</p>
+  <input type="radio" id="mc" name="question2" value="1980"> 1980<br>
+  <input type="radio" id="mc" name="question2" value="1981"> 1981<br>
+  <input type="radio" id="mc" name="question2" value="1982"> 1982<br>  
 
 
-      <main class="d-flex align-items-center justify-content-md-center" v-cloak> 
-        <div class="card">
+<p>3. Qu'enseignait Albus Dumbledore avant de devenir directeur de Poudlard ?</p>
+  <input type="radio" id="mc" name="question3" value="L'histoire de la magie"> L'histoire de la magie<br>
+  <input type="radio" id="mc" name="question3" value="La défense contre les forces du mal"> La défense contre les forces du mal<br>
+  <input type="radio" id="mc" name="question3" value="La métamorphose"> La métamorphose<br>  
 
-          <div class="card-body" v-if="current < quiz.length">
-            <h4 class="card-title">{{ step.question }}</h4>
+<p>4. De quelles langues vient la formule 'Alomora' (le sortilège de déverrouillage) ?</p>
+  <input type="radio" id="mc" name="question4" value="Anglais + Latin"> Anglais + Latin<br>
+  <input type="radio" id="mc" name="question4" value="Grec + Latin"> Grec + Latin<br>
+  <input type="radio" id="mc" name="question4" value="Hawaïen + Latin"> Hawaïen + Latin<br>  
 
-            <button v-if="step.choices" v-for="choice in step.choices" class="btn btn-lg btn-block" :class="buttonClasses(choice)" v-on:click="submitButton(choice)" :disabled="success === false">{{ choice }}</button>
 
-           
+<p>5. Lequel de ces mots de passe n'a jamais permis d'ouvrir le bureau d'Albus Dumbledore ?</p>
+  <input type="radio" id="mc" name="question5" value="Nid de cafard"> Nid de cafard<br>
+  <input type="radio" id="mc" name="question5" value="Eclair au caramel"> Eclair au caramel<br>
+  <input type="radio" id="mc" name="question5" value="Chocogrenouille"> Chocogrenouille<br>  
 
-            <p class="lead mt-2" v-if="success === true">Bien vu !</p>
-          <p class="lead mt-2" v-if="success === false">Raté ! <span v-if="!step.choices">La réponse était {{ step.answer }}</span></p>
-          <button class="btn btn-dark btn-lg btn-block" v-if="success !== null" v-on:click="nextQuestion">Prochaine question</button>
-        </div>
+<p>6. Sous quel forme d'animal apparaît le patronus de Ron Weasley ?</p>
+  <input type="radio" id="mc" name="question6" value="Une loutre"> Une loutre<br>
+  <input type="radio" id="mc" name="question6" value="Une belette"> Une belette<br>
+  <input type="radio" id="mc" name="question6" value="Un terrier"> Un terrier<br>  
 
-<div class="card-body" v-if="current == quiz.length">
-          <h4 class="card-title">Vous avez terminé !</h4>
-          <p class="card-text">Affiche le score ici !</p>
-        </div>
-      </div>
-    </main> 
-    </div>
-    <script src="vendors/vue.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
-    <script src="./quiz.js"></script>
-    <script src="./app.js"></script>
-  </body>
+<p>7. Quels sont les derniers mots de Severus Rogue, dans 'Les Reliques de la Mort'?</p>
+  <input type="radio" id="mc" name="question7" value="'Pas Harry ! Ayez pitié !'"> 'Pas Harry ! Ayez pitié !'<br>
+  <input type="radio" id="mc" name="question7" value="'Regardez...moi'"> 'Regardez...moi'<br>
+  <input type="radio" id="mc" name="question7" value="'Tu peux mieux faire que ça!'"> 'Tu peux mieux faire que ça!'<br>  
+
+<p>8. Laquelle de ces propositions n'est pas un Horcruxe dans lequel Voldemort a enfermé une partie de son âme ?</p>
+  <input type="radio" id="mc" name="question8" value="L'épée de Godric Gryffondor"> L'épée de Godric Gryffondor<br>
+  <input type="radio" id="mc" name="question8" value="Harry Potter"> Harry Potter<br>
+  <input type="radio" id="mc" name="question8" value="Le médaillon de Salazar Serpentard"> Le médaillon de Salazar Serpentard<br>  
+
+<p>9. Chez Ollivander, la meilleure boutique de baguettes magiques du chemin de Traverse, Harry Potter va trouver sa première baguette. En quoi est-elle ?</p>
+  <input type="radio" id="mc" name="question9" value="En bois de saule et crin de licorne"> En bois de saule et crin de licorne<br>
+  <input type="radio" id="mc" name="question9" value="En bois de houx et plume de phénix"> En bois de houx et plume de phénix<br>
+  <input type="radio" id="mc" name="question9" value="En bois de sureau et crin de sombral"> En bois de sureau et crin de sombral<br>  
+
+<p>10. Quelle est la devise de Poudlard ?</p>
+  <input type="radio" id="mc" name="question10" value="Draco dormiens nunquam titillandus"> Draco dormiens nunquam titillandus<br>
+  <input type="radio" id="mc" name="question10" value="Hic sunt dracones"> Hic sunt dracones<br>
+  <input type="radio" id="mc" name="question10" value="Nolites te bastardes carborundorum"> Nolites te bastardes carborundorum<br>  
+
+<input id ="button" type="button" value="Done !" onclick="check();"> 
+
+
+
+</form> 
+
+<div id ="after_submit">
+
+  <p id ="message"></p>
+  <p id ="number_correct"></p> 
+</div>  
+
+</body>
 
 </html>
