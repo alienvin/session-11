@@ -7,14 +7,26 @@ p {
 	font-size: 20px;
 }
 
+header p.lead {
+	font-size: bigger;
+}
+
+header p {
+	font-weight: normal
+}
+
 #quiz {
 
-	margin-left: 300px;
 	background: #CC9933;
 	padding: 10px 20px 10px 20px;
 	width: 700px;
 	border-radius: 20px;
 	float: center;
+	margin: auto;
+}
+
+#quiz img {
+	width: 100%;
 }
 
 
@@ -43,6 +55,17 @@ input {
 }
 
 
+.answer {
+	visibility: hidden;
+	background-color: #CC3333;
+	color: black;
+	border-radius: 10px;
+	border: 10px;
+	font-weight: normal;
+	font-size: 18px;
+	padding: 10px;
+
+}
 
 #after_submit {
 	visibility: hidden;
@@ -50,12 +73,15 @@ input {
 	padding: 10px 20px 10px 20px;
 	width: 700px;
 	border-radius: 20px;
-	float: left;
-	margin-left: 300px;
+	float: center;
+	margin: auto;
 	font-size: 30px;
 	margin-top: 10px;
-	font-weight: 100;
 
+}
+
+#after_submit img {
+	width: 100%;
 }
 
 

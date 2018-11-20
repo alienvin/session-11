@@ -43,7 +43,7 @@ function check(){
         correct++; 
   }
 
-var messages = ["Bravo ! Tu es un parfait connaisseur de l'univers de J.K Rowling!", "Pas mal, tu y es presque...", "Va falloir revisionner toute la série Harry Potter dispo sur Netflix!"];
+var messages = ["Bravo ! Tu es un parfait connaisseur de l'univers de J.K Rowling!", "Pas mal, tu y es presque...", "Va falloir revisionner toute la série Harry Potter dispo sur Netflix! Remonte la page pour découvrir les réponses."];
 var pictures = ["img/success_gif.gif", "img/giphy_bof_success.gif", "img/fail_gif.gif"];
 
 
@@ -64,10 +64,13 @@ var range;
   }
 
 document.getElementById("after_submit").style.visibility = "visible";
+[].forEach.call(document.getElementsByClassName("answer"), function (el) {
+  el.style.visibility = "visible";
+});
 
 
 document.getElementById("message").innerHTML = messages[range];
-document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
+document.getElementById("number_correct").innerHTML = "Tu as  " + correct + " /10.";
 document.getElementById("picture").src = pictures[range]; 
 }
 
