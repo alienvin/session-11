@@ -49,7 +49,7 @@ var pictures = ["img/success_gif.gif", "img/giphy_bof_success.gif", "img/fail_gi
 
 var range; 
 
-  if (correct < 4) {
+  if (correct <= 4) {
       range = 2;
 
   }
