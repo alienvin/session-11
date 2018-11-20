@@ -54,12 +54,12 @@ var range;
 
   }
 
-  if (correct > 5 && correct < 7) {
+  if (correct >= 5 && correct <= 7) {
       range = 1;
 
   }
 
-  if (correct > 8) {
+  if (correct >= 8) {
       range = 0; 
   }
 
